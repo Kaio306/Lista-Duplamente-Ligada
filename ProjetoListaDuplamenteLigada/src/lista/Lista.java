@@ -27,6 +27,31 @@ public class Lista {
         }
     }
     
+    public Pessoa pesquisar(int id){
+        Pessoa p;
+        Celula c = inicio;
+        while(c != null){
+            p = (Pessoa) c.getDados();
+            if(p.getId() == id){
+                return p;
+            }
+        }
+        return null;
+    }
+    
+    public void atualizar(int id, int idade){
+        Celula c = inicio;
+        while(c != null){
+            Pessoa p = (Pessoa) c.getDados();
+            if (p.getId() == id){
+                p.setIdade(idade);
+                c.setDados(p);
+                break;
+            }
+            c = c.getProx();
+        }
+    }
+    
     public void exibir(){
         
         Celula c = atual;

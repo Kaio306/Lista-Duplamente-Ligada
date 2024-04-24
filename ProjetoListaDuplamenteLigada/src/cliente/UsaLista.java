@@ -15,15 +15,12 @@ public class UsaLista {
         lista.inserir(new Pessoa ("José", 50));
         lista.inserir(new Pessoa ("Maria", 60));
         //Exibindo os dados
+        lista.atualizar(1, 39);
+        Pessoa p = lista.pesquisar(1);
+        System.out.println("ID a ter idade trocada" + "\n" + p);
+        System.out.println("Ápos atualizacão");
         lista.exibir();
         
-        //removendo
-        System.out.println("Após remocão");
-        if(lista.remover(3)){
-            lista.exibir();
-        }else{
-            System.out.println("Não achou!!");
-        }
+        
     }
-    
 }
